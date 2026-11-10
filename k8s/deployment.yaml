@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-service
+  name: hello-services
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello-service
+      app: hello-services
   template:
     metadata:
       labels:
-        app: hello-service
+        app: hello-services
     spec:
       containers:
-        - name: hello-service
+        - name: hello-services
           image: haripriya1310/nodejs1-backend:v1
           ports:
             - containerPort: 3000
@@ -29,11 +29,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-service
+  name: hello-services
 spec:
   selector:
-    app: hello-service
+    app: hello-services
   ports:
     - port: 80
       targetPort: 3000
-  type: ClusterIP
+  type: NodePort
