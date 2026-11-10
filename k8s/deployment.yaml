@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: hello-service
-          image: YOUR_DOCKERHUB_USERNAME/hello-service:1.0.0
+          image: haripriya1310/nodejs1-backend:v1
           ports:
             - containerPort: 3000
           readinessProbe:
